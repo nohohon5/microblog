@@ -12,8 +12,11 @@
        <div>
            micoblog:
            <a href="/index">Home</a>
+           {% if current_user.is_anonymous %}
             <a href="/login">Login</a>
-
+           {% else %}
+           <a href="/logout">logout</a>
+           {% endif %}
        </div>
        <hr>
        {% with messages = get_flashed_messages() %}
